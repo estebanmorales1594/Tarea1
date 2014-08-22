@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+import java.util.ArrayList;
 /**
  *
  * @author Jimmy
  */
 public class Test {
+    
+    public void Test(){
+        
+    }
     public  static void main (String[] args){
         guardarInformacion c = new guardarInformacion("Beat","HOala","dsda","ddfdsf","dfsd");
         guardarInformacion d = new guardarInformacion("Beat","HOala","dsda","ddfdsf","dfsd");
@@ -16,7 +20,12 @@ public class Test {
         metodoGuardarObj test1= new metodoGuardarObj();
         test1.agregarObjeto(c);
         test1.agregarObjeto(d);
-        test1.mostrarObjetos();
+        
+        
+            
+            
+        }
+        
         
     }
     

@@ -19,4 +19,14 @@ public class metodoGuardarObj {
             System.out.println("La posicion del elemento"+i+"es"+listaCanciones.get(i));
         }
     }
+    public int maxSize(){
+        int maxSize;
+         maxSize = listaCanciones.size();
+         return (maxSize);
+         
+    }
+   
+ 
+    }
+          
 }
