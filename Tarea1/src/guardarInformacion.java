@@ -10,7 +10,7 @@ public class guardarInformacion {
     public String nombreCancion;
     public String Genero;
     public String Duracion;
-    ArrayList<String> informacionCancion = new ArrayList();
+    /*ArrayList<String> informacionCancion = new ArrayList();*/
     public guardarInformacion ( String nArtista, String nAlbum, String nCancion,String genero,String tiempo){
         setArtista(nArtista);
         setCancion(nCancion);
@@ -32,37 +32,46 @@ public class guardarInformacion {
         nombreCancion =nCancion;
         
     }
-    public String setCancion(){
+    public String getCancion(){
         return nombreCancion;
     }
-    public String setArtista(){
+    public String getArtista(){
         return nombreArtista;
     }
-    public String setAlbum(){
+    public String getAlbum(){
         return nombreAlbum;
     }
    //Guarda la informacion del tiempo 
     public void setTiempo(String tiempo){
         Duracion =tiempo;
     }
-    public String setTiempo(){
+    public String getTiempo(){
         return Duracion;
     }
     public void setGenero(String genero){
         Genero =genero;
     }
-    public String setGenero(){
+    public String getGenero(){
         return Genero;
     }
-    public void almacenarDatos(){
+   /* public void almacenarDatos(){
         informacionCancion.add(nombreArtista);
         informacionCancion.add(nombreAlbum);
         informacionCancion.add(Genero);
         informacionCancion.add(Duracion);
         
-              
-        
-    }
+      
+    }*/
 
+    public String conver() {
+        StringBuilder letra = new StringBuilder();
+        letra.append("\nCancion: ");
+        letra.append(nombreCancion);
+        letra.append("\nArtista: ");
+        letra.append(nombreArtista);
+        letra.append("\nGenero: ");
+        letra.append(Genero);
+        return letra.toString();
+}
 }
 
