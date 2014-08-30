@@ -33,8 +33,7 @@ public class metodoGuardarObj {
         long Duracion = mp3file.getLengthInSeconds();
         
         cancion = new guardarInformacion( Autor , Album ,Cancion,Genero,Duracion+"");
-        listaCanciones.add(cancion);
-       
+        listaCanciones.add(cancion);   
        
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -53,12 +52,10 @@ public class metodoGuardarObj {
     }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Metodo de busqueda secuencial usando un indice
-    public static Object buscarArtista(String elemento){
-        
+    public static Object buscarArtista(String elemento){ 
         
         for (int i=0; i< listaCanciones.size();i++){
             
-
             if (listaCanciones.get(x).getArtista() == elemento){
                
                listaBusqueda.add(listaCanciones.get(x).getCancion());
@@ -72,10 +69,8 @@ public class metodoGuardarObj {
     
     public static Object buscarAlbum(String elemento){
         
-        
         for (int i=0; i< listaCanciones.size();i++){
             
-
             if (listaCanciones.get(x).getAlbum() == elemento){
                
                listaBusqueda.add(listaCanciones.get(x).getCancion());
@@ -89,9 +84,7 @@ public class metodoGuardarObj {
     
      public static Object buscarGenero(String elemento){
         
-        
         for (int i=0; i< listaCanciones.size();i++){
-            
 
             if (listaCanciones.get(x).getGenero() == elemento){
                
