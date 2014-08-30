@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package filechooser.pkg2;
+//package filechooser.pkg2;//
 
 import java.io.File;
 import javax.swing.JFileChooser;
@@ -17,7 +17,7 @@ public class Filechooser2 {
         int status = fileChooser.showOpenDialog (null);
         if (status == JFileChooser.APPROVE_OPTION){
             File selectedFile = fileChooser.getSelectedFile();
-            System.out.println (selectedFile.getParent());
+            System.out.println (selectedFile.getAbsolutePath());
         }
         else{ 
             if (status == JFileChooser.CANCEL_OPTION){
