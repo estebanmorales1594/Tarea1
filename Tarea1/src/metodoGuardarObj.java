@@ -15,6 +15,11 @@ public class metodoGuardarObj {
     static int x;
   
     
+   public static void modificarCancion(String nombreCancion,String cancion,String artista,String album){
+       
+       
+       
+   }
    
     
     //metodo que ingresa las canciones en un array
@@ -38,7 +43,7 @@ public class metodoGuardarObj {
             
         }
     }
-    //Metodo de busqueda secuencial usando dos indices
+    //Metodo de busqueda secuencial usando un indice
     public static Object mostrarBusqueda(String elemento){
         
         
@@ -57,6 +62,9 @@ public class metodoGuardarObj {
         } 
         System.out.println(listaBusqueda);
         return (listaBusqueda); 
+        
+    }
+    public void eliminarCancion(){
         
     }
     

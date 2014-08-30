@@ -1,6 +1,4 @@
 
-import java.util.ArrayList;
-
 /*
 Guardar Informacion
  */
@@ -10,7 +8,7 @@ public class guardarInformacion {
     public String nombreCancion;
     public String Genero;
     public String Duracion;
-    /*ArrayList<String> informacionCancion = new ArrayList();*/
+   
     public guardarInformacion ( String nArtista, String nAlbum, String nCancion,String genero,String tiempo){
         setArtista(nArtista);
         setCancion(nCancion);
@@ -54,15 +52,7 @@ public class guardarInformacion {
     public String getGenero(){
         return Genero;
     }
-   /* public void almacenarDatos(){
-        informacionCancion.add(nombreArtista);
-        informacionCancion.add(nombreAlbum);
-        informacionCancion.add(Genero);
-        informacionCancion.add(Duracion);
-        
-      
-    }*/
-
+//Prueba
     public String conver() {
         StringBuilder letra = new StringBuilder();
         letra.append("\nCancion: ");
