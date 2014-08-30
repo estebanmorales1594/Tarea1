@@ -53,7 +53,7 @@ public class metodoGuardarObj {
     }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Metodo de busqueda secuencial usando un indice
-    public static Object mostrarBusqueda(String elemento){
+    public static Object buscarArtista(String elemento){
         
         
         for (int i=0; i< listaCanciones.size();i++){
@@ -69,6 +69,59 @@ public class metodoGuardarObj {
         return (listaBusqueda); 
         
     }
+    
+    public static Object buscarAlbum(String elemento){
+        
+        
+        for (int i=0; i< listaCanciones.size();i++){
+            
+
+            if (listaCanciones.get(x).getAlbum() == elemento){
+               
+               listaBusqueda.add(listaCanciones.get(x).getCancion());
+            }
+            x++;       
+        } 
+        System.out.println(listaBusqueda);
+        return (listaBusqueda); 
+        
+    }
+    
+     public static Object buscarGenero(String elemento){
+        
+        
+        for (int i=0; i< listaCanciones.size();i++){
+            
+
+            if (listaCanciones.get(x).getGenero() == elemento){
+               
+               listaBusqueda.add(listaCanciones.get(x).getCancion());
+            }
+            x++;       
+        } 
+        System.out.println(listaBusqueda);
+        return (listaBusqueda); 
+        
+    }
+     
+      public static Object buscarCancion(String elemento){
+        
+        
+        for (int i=0; i< listaCanciones.size();i++){
+            
+
+            if (listaCanciones.get(x).getCancion() == elemento){
+               
+               listaBusqueda.add(listaCanciones.get(x).getCancion());
+            }
+            x++;       
+        } 
+        System.out.println(listaBusqueda);
+        return (listaBusqueda); 
+
+    }
+    ///////////////////////////////////////////////////////////////////////////
+      //Modifica la cancion
     public void modificarCancion(String cancion,String Artista, String Album, String Genero){
         for (int i = 0; i < listaCanciones.size();i++){
             if(cancion == listaCanciones.get(i).getCancion()){
