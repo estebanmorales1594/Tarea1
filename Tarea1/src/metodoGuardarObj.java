@@ -69,6 +69,16 @@ public class metodoGuardarObj {
         return (listaBusqueda); 
         
     }
+    public void modificarCancion(String cancion,String Artista, String Album, String Genero){
+        for (int i = 0; i < listaCanciones.size();i++){
+            if(cancion == listaCanciones.get(i).getCancion()){
+                listaCanciones.get(i).setAlbum(Album);
+                listaCanciones.get(i).setArtista(Artista);
+                listaCanciones.get(i).setGenero(Genero);
+                
+            }
+        }
+    } 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public void eliminarCancion(){
         
