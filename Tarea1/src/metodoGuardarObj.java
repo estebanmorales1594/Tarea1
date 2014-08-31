@@ -3,10 +3,8 @@ import com.mpatric.mp3agic.ID3v1;
 import com.mpatric.mp3agic.InvalidDataException;
 import com.mpatric.mp3agic.Mp3File;
 import com.mpatric.mp3agic.UnsupportedTagException;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import javax.swing.JFileChooser;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 Aqui empieza el codigo
@@ -135,24 +133,13 @@ public class metodoGuardarObj {
   //Prueba de los metodos.
     // Aqui comienza el main.///////////////////////////////////////////////////////////////////////////////////////
     public static void main (String[] args) throws IOException, UnsupportedTagException, InvalidDataException{
-        JFileChooser fileChooser = new JFileChooser(".");
-        int status = fileChooser.showOpenDialog (null);
-        if (status == JFileChooser.APPROVE_OPTION){
-            File selectedFile = fileChooser.getSelectedFile();
-            camino = selectedFile.getAbsolutePath();
-        }
-        else{ 
-            if (status == JFileChooser.CANCEL_OPTION){
-                System.out.println("CANCELAR");
-            }
-        }
-        agregarCancion(camino);
+        agregarCancion("C:\\Users\\Jimmy\\Downloads\\ow9nwithywithme\\01. With You-With Me.mp3");
         System.out.println(listaCanciones.get(0).getCancion());
         
-        }
+  
      
     }
-
+}
 
     
     
