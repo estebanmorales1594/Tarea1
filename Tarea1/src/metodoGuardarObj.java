@@ -21,6 +21,7 @@ public class metodoGuardarObj {
     
     static guardarInformacion cancion; 
     static int x;
+    static int y;
     static String camino;
   
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -73,12 +74,13 @@ public class metodoGuardarObj {
     public static Object buscarAlbum(String elemento){
         
         for (int i=0; i< listaCanciones.size();i++){
-            
-            if (listaCanciones.get(x).getAlbum().equals(elemento)){
+            int y = listaCanciones.size()-1;
+            if (listaCanciones.get(x).getAlbum().equals(elemento) || listaCanciones.get(y).getAlbum().equals(elemento) ){
                
                listaBusqueda.add(listaCanciones.get(x).getCancion());
             }
-            x++;       
+            x++;    
+            y--;
         } 
         System.out.println(listaBusqueda);
         return (listaBusqueda); 
@@ -104,10 +106,7 @@ public class metodoGuardarObj {
         
         
         for (int i=0; i< listaCanciones.size();i++){
-            System.out.println(listaCanciones.get(i).getCancion().length());
-            System.out.println(elemento.length());
-            System.out.println(elemento.getClass().getName());
-            System.out.println(listaCanciones.get(i).getCancion().getClass().getName());
+       
             if (listaCanciones.get(i).getCancion().equals(elemento)){
                System.out.println("True");
                listaBusqueda.add(listaCanciones.get(i).getCancion());
