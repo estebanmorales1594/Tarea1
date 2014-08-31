@@ -16,11 +16,10 @@ public class Reproductormusica implements BasicPlayerListener {
 
     public Reproductormusica() {
         player.addBasicPlayerListener(this);
-        out= System.out;
         //player = new BasicPlayer();
     }
 BasicController control=(BasicController)player;
-
+/*
 public void coge(String y){
 
 }
@@ -58,6 +57,7 @@ public void coge(String y){
         y.AbrirFichero("/home/estebanmorales/Downloads/ingrid rosario - como lluvia.mp3");
         y.Play();
     }
+*/
     
     public void opened(Object stream, Map properties) {
         display("opened : " + properties.toString());
