@@ -28,13 +28,14 @@ public class metodoGuardarObj {
     public static void agregarCancion(String camino) throws IOException, UnsupportedTagException, InvalidDataException{
         Mp3File mp3file = new Mp3File(camino);   
         ID3v1 id3v1Tag = mp3file.getId3v1Tag();
-        String Autor = id3v1Tag.getArtist();
-        String Album = id3v1Tag.getAlbum();
-        String Cancion = id3v1Tag.getTitle();
-        String Genero = id3v1Tag.getGenreDescription();
+        String Autor = id3v1Tag.getArtist()+"";
+        String Album = id3v1Tag.getAlbum()+"";
+        String Cancion = id3v1Tag.getTitle()+"";
+        String Genero = id3v1Tag.getGenreDescription()+"";
         long Duracion = mp3file.getLengthInSeconds();
+        String Arte = "";
         
-        cancion = new guardarInformacion( Autor , Album ,Cancion,Genero,Duracion+"");
+        cancion = new guardarInformacion( Autor , Album ,Cancion,Genero,Duracion+"",Arte);
         listaCanciones.add(cancion);   
        
     }
@@ -42,7 +43,7 @@ public class metodoGuardarObj {
     //muestra la informacion deseada  
     public  static void mostrarCancion(String nombreCancion){      
         for(int i = 0; i< listaCanciones.size(); i++){
-            if (listaCanciones.get(i).getCancion()== nombreCancion){
+            if (listaCanciones.get(i).getCancion().equals(nombreCancion)){
                
                 System.out.println(listaCanciones.get(i).getAlbum()); 
                 System.out.println(listaCanciones.get(i).getArtista()); 
@@ -58,7 +59,7 @@ public class metodoGuardarObj {
         
         for (int i=0; i< listaCanciones.size();i++){
             
-            if (listaCanciones.get(x).getArtista() == elemento){
+            if (listaCanciones.get(x).getArtista().equals(elemento)){
                
                listaBusqueda.add(listaCanciones.get(x).getCancion());
             }
@@ -73,7 +74,7 @@ public class metodoGuardarObj {
         
         for (int i=0; i< listaCanciones.size();i++){
             
-            if (listaCanciones.get(x).getAlbum() == elemento){
+            if (listaCanciones.get(x).getAlbum().equals(elemento)){
                
                listaBusqueda.add(listaCanciones.get(x).getCancion());
             }
@@ -88,7 +89,7 @@ public class metodoGuardarObj {
         
         for (int i=0; i< listaCanciones.size();i++){
 
-            if (listaCanciones.get(x).getGenero() == elemento){
+            if (listaCanciones.get(x).getGenero().equals(elemento)){
                
                listaBusqueda.add(listaCanciones.get(x).getCancion());
             }
@@ -103,11 +104,13 @@ public class metodoGuardarObj {
         
         
         for (int i=0; i< listaCanciones.size();i++){
-            
-
-            if (listaCanciones.get(x).getCancion() == elemento){
-               
-               listaBusqueda.add(listaCanciones.get(x).getCancion());
+            System.out.println(listaCanciones.get(i).getCancion().length());
+            System.out.println(elemento.length());
+            System.out.println(elemento.getClass().getName());
+            System.out.println(listaCanciones.get(i).getCancion().getClass().getName());
+            if (listaCanciones.get(i).getCancion().equals(elemento)){
+               System.out.println("True");
+               listaBusqueda.add(listaCanciones.get(i).getCancion());
             }
             x++;       
         } 
@@ -119,7 +122,7 @@ public class metodoGuardarObj {
       //Modifica la cancion
     public void modificarCancion(String cancion,String Artista, String Album, String Genero){
         for (int i = 0; i < listaCanciones.size();i++){
-            if(cancion == listaCanciones.get(i).getCancion()){
+            if(cancion.equals(listaCanciones.get(i).getCancion())){
                 listaCanciones.get(i).setAlbum(Album);
                 listaCanciones.get(i).setArtista(Artista);
                 listaCanciones.get(i).setGenero(Genero);
@@ -134,6 +137,8 @@ public class metodoGuardarObj {
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //Prueba de los metodos.
     // Aqui comienza el main.///////////////////////////////////////////////////////////////////////////////////////
+    //No es parte del codig.//
+    
     public static void main (String[] args) throws IOException, UnsupportedTagException, InvalidDataException{
         JFileChooser fileChooser = new JFileChooser(".");
         int status = fileChooser.showOpenDialog (null);
@@ -148,11 +153,14 @@ public class metodoGuardarObj {
         }
         agregarCancion(camino);
         System.out.println(listaCanciones.get(0).getCancion());
+        System.out.println(listaCanciones.get(0).getArtista());
+        mostrarCancion("With You/With Me");
+        buscarCancion("With You/With Me");
+        
         
         }
      
     }
-
 
     
     

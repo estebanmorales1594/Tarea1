@@ -8,8 +8,9 @@ public class guardarInformacion {
     public String nombreCancion;
     public String Genero;
     public String Duracion;
+    public String Arte;
    
-    public guardarInformacion ( String nArtista, String nAlbum, String nCancion,String genero,String tiempo){
+    public guardarInformacion ( String nArtista, String nAlbum, String nCancion,String genero,String tiempo,String arteAlbum){
         setArtista(nArtista);
         setCancion(nCancion);
         setAlbum(nAlbum);
@@ -52,7 +53,14 @@ public class guardarInformacion {
     public String getGenero(){
         return Genero;
     }
-//Prueba
+    public void setArt(String arteAlbum){
+        Arte = arteAlbum;
+    }
+    public String getArte(){
+        return Arte;
+    }
+//Prueba///////////////////////////////////////////////////
+    ////////////////////////////////////////////////
     public String conver() {
         StringBuilder letra = new StringBuilder();
         letra.append("\nCancion: ");
