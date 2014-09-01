@@ -23,6 +23,12 @@ public class metodoGuardarObj {
     static int x;
     static int y;
     static String camino;
+    
+    public metodoGuardarObj(String camino) throws IOException, UnsupportedTagException, InvalidDataException{
+        
+        agregarCancion(camino);
+        
+    }
   
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //metodo que ingresa las canciones en un array
@@ -48,7 +54,7 @@ public class metodoGuardarObj {
                
                 System.out.println(listaCanciones.get(i).getAlbum()); 
                 System.out.println(listaCanciones.get(i).getArtista()); 
-                System.out.println(listaCanciones.get(i).getTiempo()+"Min"); 
+                System.out.println(listaCanciones.get(i).getTiempo()+"secs"); 
                 System.out.println(listaCanciones.get(i).getGenero()); 
             }
             
