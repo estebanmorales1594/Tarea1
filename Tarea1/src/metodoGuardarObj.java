@@ -159,9 +159,14 @@ public class metodoGuardarObj {
   //Prueba de los metodos.
     // Aqui comienza el main.///////////////////////////////////////////////////////////////////////////////////////
     //No es parte del codig.//
+
     
     /*public static void main (String[] args) throws IOException, UnsupportedTagException, InvalidDataException{
        for(int i=0;i<5;i++){
+=======
+    /*
+    public static void main (String[] args) throws IOException, UnsupportedTagException, InvalidDataException{
+>>>>>>> origin/master
         JFileChooser fileChooser = new JFileChooser(".");
         int status = fileChooser.showOpenDialog (null);
         if (status == JFileChooser.APPROVE_OPTION){
@@ -182,10 +187,10 @@ public class metodoGuardarObj {
         buscarCancion("With You/With Me");
         
         
-        
+
         }*/
-     
-    }
+
+        }
 
     
     
