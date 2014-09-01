@@ -69,6 +69,10 @@ public class metodoGuardarObj {
             if (listaCanciones.get(x).getArtista().equals(elemento)){
                
                listaBusqueda.add(listaCanciones.get(x).getCancion());
+               listaBusqueda.add(listaCanciones.get(x).getArtista());
+               listaBusqueda.add(listaCanciones.get(x).getAlbum());
+               listaBusqueda.add(listaCanciones.get(x).getGenero());
+               listaBusqueda.add(listaCanciones.get(x).getTiempo());
             }
             x++;       
         } 
@@ -81,12 +85,16 @@ public class metodoGuardarObj {
         
         for (int i=0; i< listaCanciones.size();i++){
             int y = listaCanciones.size()-1;
-            if (listaCanciones.get(x).getAlbum().equals(elemento) || listaCanciones.get(y).getAlbum().equals(elemento) ){
+            if (listaCanciones.get(x).getAlbum().equals(elemento)){
                
                listaBusqueda.add(listaCanciones.get(x).getCancion());
+               listaBusqueda.add(listaCanciones.get(x).getArtista());
+               listaBusqueda.add(listaCanciones.get(x).getAlbum());
+               listaBusqueda.add(listaCanciones.get(x).getGenero());
+               listaBusqueda.add(listaCanciones.get(x).getTiempo());
             }
             x++;    
-            y--;
+            
         } 
         System.out.println(listaBusqueda);
         return (listaBusqueda); 
@@ -100,6 +108,7 @@ public class metodoGuardarObj {
             if (listaCanciones.get(x).getGenero().equals(elemento)){
                
                listaBusqueda.add(listaCanciones.get(x).getCancion());
+               
             }
             x++;       
         } 
@@ -114,8 +123,12 @@ public class metodoGuardarObj {
         for (int i=0; i< listaCanciones.size();i++){
        
             if (listaCanciones.get(i).getCancion().equals(elemento)){
-               System.out.println("True");
-               listaBusqueda.add(listaCanciones.get(i).getCancion());
+               
+               listaBusqueda.add(listaCanciones.get(x).getCancion());
+               listaBusqueda.add(listaCanciones.get(x).getArtista());
+               listaBusqueda.add(listaCanciones.get(x).getAlbum());
+               listaBusqueda.add(listaCanciones.get(x).getGenero());
+               listaBusqueda.add(listaCanciones.get(x).getTiempo());
             }
             x++;       
         } 
@@ -131,6 +144,7 @@ public class metodoGuardarObj {
                 listaCanciones.get(i).setAlbum(Album);
                 listaCanciones.get(i).setArtista(Artista);
                 listaCanciones.get(i).setGenero(Genero);
+              
                 
             }
         }
