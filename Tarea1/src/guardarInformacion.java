@@ -18,6 +18,7 @@ public class guardarInformacion {
         setTiempo(tiempo);
         setGenero(genero);
         setCancion(nCancion);
+        setCamino(dCamino);
     }
     // Guardan la informacion del nombre del artista 
     public void setArtista(String nArtista){
