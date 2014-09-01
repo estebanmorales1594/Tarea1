@@ -17,7 +17,6 @@ public class metodoGuardarObj {
     
     static ArrayList<guardarInformacion> listaCanciones = new ArrayList();
     static ArrayList<String> listaBusqueda= new ArrayList();
-    static ArrayList<String> listaOrdenar= new ArrayList();
     
     static guardarInformacion cancion; 
     static int x;
@@ -41,12 +40,14 @@ public class metodoGuardarObj {
         String Genero = id3v1Tag.getGenreDescription()+"";
         long Duracion = mp3file.getLengthInSeconds();
         String Arte = "";
+        String path = camino;
         
-        cancion = new guardarInformacion( Autor , Album ,Cancion,Genero,Duracion+"",Arte);
+        cancion = new guardarInformacion( Autor , Album ,Cancion,Genero,Duracion+"",Arte,path+"");
         listaCanciones.add(cancion);   
        
     }
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
     //muestra la informacion deseada  
     public  static void mostrarCancion(String nombreCancion){      
         for(int i = 0; i< listaCanciones.size(); i++){
@@ -56,6 +57,7 @@ public class metodoGuardarObj {
                 System.out.println(listaCanciones.get(i).getArtista()); 
                 System.out.println(listaCanciones.get(i).getTiempo()+"secs"); 
                 System.out.println(listaCanciones.get(i).getGenero()); 
+                System.out.println("El camino es "+listaCanciones.get(i).getCamino());
             }
             
         }
@@ -158,7 +160,8 @@ public class metodoGuardarObj {
     // Aqui comienza el main.///////////////////////////////////////////////////////////////////////////////////////
     //No es parte del codig.//
     
-    public static void main (String[] args) throws IOException, UnsupportedTagException, InvalidDataException{
+    /*public static void main (String[] args) throws IOException, UnsupportedTagException, InvalidDataException{
+       for(int i=0;i<5;i++){
         JFileChooser fileChooser = new JFileChooser(".");
         int status = fileChooser.showOpenDialog (null);
         if (status == JFileChooser.APPROVE_OPTION){
@@ -170,14 +173,17 @@ public class metodoGuardarObj {
                 System.out.println("CANCELAR");
             }
         }
+        
         agregarCancion(camino);
+        }
         System.out.println(listaCanciones.get(0).getCancion());
         System.out.println(listaCanciones.get(0).getArtista());
         mostrarCancion("With You/With Me");
         buscarCancion("With You/With Me");
         
         
-        }
+        
+        }*/
      
     }
 
