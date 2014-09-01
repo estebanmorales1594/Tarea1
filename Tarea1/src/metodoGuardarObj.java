@@ -157,7 +157,7 @@ public class metodoGuardarObj {
   //Prueba de los metodos.
     // Aqui comienza el main.///////////////////////////////////////////////////////////////////////////////////////
     //No es parte del codig.//
-    
+    /*
     public static void main (String[] args) throws IOException, UnsupportedTagException, InvalidDataException{
         JFileChooser fileChooser = new JFileChooser(".");
         int status = fileChooser.showOpenDialog (null);
@@ -178,6 +178,7 @@ public class metodoGuardarObj {
         
         
         }
+    */
      
     }
 

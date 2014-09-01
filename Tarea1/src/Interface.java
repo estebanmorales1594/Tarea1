@@ -1,6 +1,3 @@
-
-package reproductormusica;
-
 import com.mpatric.mp3agic.ID3v1;
 import com.mpatric.mp3agic.InvalidDataException;
 import com.mpatric.mp3agic.Mp3File;
@@ -23,6 +20,7 @@ Reproductormusica rep= null;
 JFileChooser fileChooser = new JFileChooser();
 
 File file;
+    private String String;
 
 
     /**
@@ -237,13 +235,12 @@ File file;
                 String file2;
                 file2 = file.toString();
                 metodoGuardarObj Informacion;
-                Informacion = new metodoGuardarObj();
-                Informacion.agregarCancion(file2);
+                Informacion = new metodoGuardarObj(file2);              
                 jLabel2.setText("Estas Escuchando=");
-                jLabel3.setText("Cancion: " + Informacion.getCancion());
-                jLabel4.setText("Artista: " + Informacion.getArtista());
-                jLabel5.setText("Album: " + Informacion.getAlbum());
-                jLabel6.setText("Genero: " + Informacion.getGenero());
+                //jLabel3.setText("Cancion: " + Informacion.getCancion());
+                //jLabel4.setText("Artista: " + Informacion.getArtista());
+                //jLabel5.setText("Album: " + Informacion.getAlbum());
+                //jLabel6.setText("Genero: " + Informacion.getGenero());
             } 
             catch (BasicPlayerException | IOException | UnsupportedTagException | InvalidDataException ex) {
                 Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
