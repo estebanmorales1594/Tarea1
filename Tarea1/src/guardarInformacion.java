@@ -1,6 +1,6 @@
 
 /*
-Guardar Informacion
+Guardar Informacion de la cancion
  */
 public class guardarInformacion {
     public String nombreArtista;
@@ -9,8 +9,9 @@ public class guardarInformacion {
     public String Genero;
     public String Duracion;
     public String Arte;
+    public String Camino;
    
-    public guardarInformacion ( String nArtista, String nAlbum, String nCancion,String genero,String tiempo,String arteAlbum){
+    public guardarInformacion ( String nArtista, String nAlbum, String nCancion,String genero,String tiempo,String arteAlbum,String dCamino){
         setArtista(nArtista);
         setCancion(nCancion);
         setAlbum(nAlbum);
@@ -59,17 +60,12 @@ public class guardarInformacion {
     public String getArte(){
         return Arte;
     }
-//Prueba///////////////////////////////////////////////////
-    ////////////////////////////////////////////////
-    public String conver() {
-        StringBuilder letra = new StringBuilder();
-        letra.append("\nCancion: ");
-        letra.append(nombreCancion);
-        letra.append("\nArtista: ");
-        letra.append(nombreArtista);
-        letra.append("\nGenero: ");
-        letra.append(Genero);
-        return letra.toString();
-}
+    public void setCamino(String dCamino){
+        Camino = dCamino;
+    }
+    public String getCamino(){
+        return Camino;
+    }
+
 }
 
