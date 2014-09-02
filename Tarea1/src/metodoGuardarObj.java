@@ -15,23 +15,23 @@ Aqui empieza el codigo
 // Objeto que se encarga de guardar los objetos canciones en una lista enlazada
 public class metodoGuardarObj {
     
-    static ArrayList<guardarInformacion> listaCanciones = new ArrayList();
-    static ArrayList<String> listaBusqueda= new ArrayList();
+     ArrayList<guardarInformacion> listaCanciones = new ArrayList();
+    ArrayList<String> listaBusqueda= new ArrayList();
     
-    static guardarInformacion cancion; 
-    static int x;
-    static int y;
-    static String camino;
+     guardarInformacion cancion; 
+     int x;
+     int y;
+     String camino;
     
-    public metodoGuardarObj(String camino) throws IOException, UnsupportedTagException, InvalidDataException{
+    /*public metodoGuardarObj(String camino) throws IOException, UnsupportedTagException, InvalidDataException{
         
         agregarCancion(camino);
         
-    }
+    }*/
   
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //metodo que ingresa las canciones en un array
-    public static void agregarCancion(String camino) throws IOException, UnsupportedTagException, InvalidDataException{
+    public void agregarCancion(String camino) throws IOException, UnsupportedTagException, InvalidDataException{
         Mp3File mp3file = new Mp3File(camino);   
         ID3v1 id3v1Tag = mp3file.getId3v1Tag();
         String Autor = id3v1Tag.getArtist()+"";
@@ -49,7 +49,7 @@ public class metodoGuardarObj {
     ////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
     //muestra la informacion deseada  
-    public  static void mostrarCancion(String nombreCancion){      
+    public   void mostrarCancion(String nombreCancion){      
         for(int i = 0; i< listaCanciones.size(); i++){
             if (listaCanciones.get(i).getCancion().equals(nombreCancion)){
                
@@ -64,7 +64,7 @@ public class metodoGuardarObj {
     }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Metodo de busqueda secuencial usando un indice
-    public static Object buscarArtista(String elemento){ 
+    public  Object buscarArtista(String elemento){ 
         
         for (int i=0; i< listaCanciones.size();i++){
             
@@ -83,7 +83,7 @@ public class metodoGuardarObj {
         
     }
     
-    public static Object buscarAlbum(String elemento){
+    public  Object buscarAlbum(String elemento){
         
         for (int i=0; i< listaCanciones.size();i++){
             int y = listaCanciones.size()-1;
@@ -103,7 +103,7 @@ public class metodoGuardarObj {
         
     }
     
-     public static Object buscarGenero(String elemento){
+     public  Object buscarGenero(String elemento){
         
         for (int i=0; i< listaCanciones.size();i++){
 
@@ -119,7 +119,7 @@ public class metodoGuardarObj {
         
     }
      
-      public static Object buscarCancion(String elemento){
+      public Object buscarCancion(String elemento){
         
         
         for (int i=0; i< listaCanciones.size();i++){
@@ -163,7 +163,7 @@ public class metodoGuardarObj {
     
     
 
-    public static void main (String[] args) throws IOException, UnsupportedTagException, InvalidDataException{
+   /* public static void main (String[] args) throws IOException, UnsupportedTagException, InvalidDataException{
 
         JFileChooser fileChooser = new JFileChooser(".");
         int status = fileChooser.showOpenDialog (null);
@@ -183,7 +183,7 @@ public class metodoGuardarObj {
         mostrarCancion("With You/With Me");
         buscarCancion("With You/With Me");
         
-    }
+    }*/
 }
        
         
