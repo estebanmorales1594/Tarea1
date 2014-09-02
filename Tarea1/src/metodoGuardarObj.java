@@ -16,18 +16,19 @@ Aqui empieza el codigo
 public class metodoGuardarObj {
     
      ArrayList<guardarInformacion> listaCanciones = new ArrayList();
-    ArrayList<String> listaBusqueda= new ArrayList();
+     ArrayList<String> listaBusqueda= new ArrayList();
+     
     
      guardarInformacion cancion; 
      int x;
      int y;
      String camino;
     
-    /*public metodoGuardarObj(String camino) throws IOException, UnsupportedTagException, InvalidDataException{
+    public metodoGuardarObj() throws IOException, UnsupportedTagException, InvalidDataException{
         
-        agregarCancion(camino);
-        
-    }*/
+
+    }
+    
   
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //metodo que ingresa las canciones en un array
@@ -49,18 +50,23 @@ public class metodoGuardarObj {
     ////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
     //muestra la informacion deseada  
-    public   void mostrarCancion(String nombreCancion){      
-        for(int i = 0; i< listaCanciones.size(); i++){
-            if (listaCanciones.get(i).getCancion().equals(nombreCancion)){
-               
-                System.out.println(listaCanciones.get(i).getAlbum()); 
-                System.out.println(listaCanciones.get(i).getArtista()); 
-                System.out.println(listaCanciones.get(i).getTiempo()+"secs"); 
-                System.out.println(listaCanciones.get(i).getGenero()); 
-                System.out.println("El camino es "+listaCanciones.get(i).getCamino());
-            }
-            
+    public String mostrarCancion(int x,int y){     
+        if (y ==1){
+             return listaCanciones.get(x).getCancion();
         }
+        if (y==2){
+            return listaCanciones.get(x).getArtista();
+        }
+        if (y == 3){
+           return listaCanciones.get(x).getAlbum();
+        }
+        if (y==4){
+             return listaCanciones.get(x).getGenero();
+        }
+        if(y==5){
+            return listaCanciones.get(x).getTiempo();
+        }
+        return  "";
     }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Metodo de busqueda secuencial usando un indice
@@ -152,9 +158,14 @@ public class metodoGuardarObj {
         }
     } 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public void eliminarCancion(){
+    public void eliminarCancion(int x){
         
-    }
+                listaCanciones.remove(x);
+            }
+        
+        
+        
+    
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //Prueba de los metodos.
     // Aqui comienza el main.///////////////////////////////////////////////////////////////////////////////////////

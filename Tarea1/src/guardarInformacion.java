@@ -22,50 +22,50 @@ public class guardarInformacion {
     }
     // Guardan la informacion del nombre del artista 
     public void setArtista(String nArtista){
-        nombreArtista = nArtista;
+        this.nombreArtista = nArtista;
      }
     // Guarda la informacion del nombre del album
     public void setAlbum(String nAlbum){
-        nombreAlbum = nAlbum;
+        this.nombreAlbum = nAlbum;
     }
     // Guarda la informacion del nombre de la cancion        
     public void setCancion(String nCancion){
-        nombreCancion =nCancion;
+        this.nombreCancion =nCancion;
         
     }
     public String getCancion(){
-        return nombreCancion;
+        return this.nombreCancion;
     }
     public String getArtista(){
-        return nombreArtista;
+        return this.nombreArtista;
     }
     public String getAlbum(){
-        return nombreAlbum;
+        return this.nombreAlbum;
     }
    //Guarda la informacion del tiempo 
     public void setTiempo(String tiempo){
-        Duracion =tiempo;
+        this.Duracion =tiempo;
     }
     public String getTiempo(){
-        return Duracion;
+        return this.Duracion;
     }
     public void setGenero(String genero){
-        Genero =genero;
+        this.Genero =genero;
     }
     public String getGenero(){
-        return Genero;
+        return this.Genero;
     }
     public void setArt(String arteAlbum){
-        Arte = arteAlbum;
+        this.Arte = arteAlbum;
     }
     public String getArte(){
-        return Arte;
+        return this.Arte;
     }
     public void setCamino(String dCamino){
-        Camino = dCamino;
+        this.Camino = dCamino;
     }
     public String getCamino(){
-        return Camino;
+        return this.Camino;
     }
 
 }
