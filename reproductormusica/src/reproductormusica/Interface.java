@@ -244,7 +244,7 @@ File file;
                 Informacion = new metodoGuardarObj();
                 Informacion.agregarCancion(file2);
                 jLabel2.setText("Estas Escuchando=");
-                jLabel3.setText("Cancion: " + Informacion.getCancion());
+                jLabel3.setText("Cancion: " + Informacion.get(0).;
                 jLabel4.setText("Artista: " + Informacion.getArtista());
                 jLabel5.setText("Album: " + Informacion.getAlbum());
                 jLabel6.setText("Genero: " + Informacion.getGenero());

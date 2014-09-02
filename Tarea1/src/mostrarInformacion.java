@@ -1,12 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
- * @author Jimmy
+ * En esta ventana se va a mostrar la informacion sobre una cancion
+ * que el usuario desee ver
+ * 
  */
 public class mostrarInformacion extends javax.swing.JFrame {
 
