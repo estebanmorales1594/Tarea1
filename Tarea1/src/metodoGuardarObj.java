@@ -66,6 +66,9 @@ public class metodoGuardarObj {
         if(y==5){
             return listaCanciones.get(x).getTiempo();
         }
+        if (y==6){
+            return listaCanciones.get(x).getCamino();
+        }
         return  "";
     }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -146,16 +149,16 @@ public class metodoGuardarObj {
     }
     ///////////////////////////////////////////////////////////////////////////
       //Modifica la cancion
-    public void modificarCancion(String cancion,String Artista, String Album, String Genero){
-        for (int i = 0; i < listaCanciones.size();i++){
-            if(cancion.equals(listaCanciones.get(i).getCancion())){
+    public void modificarCancion(int i,String Artista, String Album, String Genero){
+       // for (int i = 0; i < listaCanciones.size();i++){
+            //if(cancion.equals(listaCanciones.get(i).getCancion())){
                 listaCanciones.get(i).setAlbum(Album);
                 listaCanciones.get(i).setArtista(Artista);
                 listaCanciones.get(i).setGenero(Genero);
               
                 
-            }
-        }
+            //}
+       // }
     } 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public void eliminarCancion(int x){

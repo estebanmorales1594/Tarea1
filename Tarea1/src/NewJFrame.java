@@ -7,6 +7,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javazoom.jlgui.basicplayer.BasicPlayerException;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -26,6 +29,7 @@ public class NewJFrame extends javax.swing.JFrame {
      DefaultListModel lista = new DefaultListModel();
      JFileChooser fileChooser = new JFileChooser(".");
      mostrarInformacion informacion;
+     modificarInfo modificar;
     /**
      * Creates new form NewJFrame
      * @throws java.io.IOException
@@ -96,6 +100,11 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         jButton6.setText("Play");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -161,6 +170,31 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         
+        if(libCancion.getSelectedIndex()<0){
+            
+        }
+        else{
+            int a = libCancion.getSelectedIndex();
+            modificar = new modificarInfo();
+            modificar.setVisible(true);
+            modificar.btn.getModel().setEnabled(true);
+            modificar.btn.addActionListener(new ActionListener(){
+                public void actionPerformed(ActionEvent evt){
+                     
+                    String artista = modificar.txtArtista.getText();
+                    String album = modificar.txtAlbum.getText();
+                    String genero =  modificar.txtGenero.getText();
+                    cancion.modificarCancion(a, artista, album, genero);
+                    modificar.lblCorrecto.setText("Se ha modificado");
+          }
+                
+      
+            
+        
+            });
+           // modificar.btnSubir.getModel().setEnabled(true);
+            
+                    }
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -223,6 +257,29 @@ public class NewJFrame extends javax.swing.JFrame {
         cancion.eliminarCancion(e);// TODO add your handling code here:
         i--;
     }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        if (libCancion.getSelectedIndex()<0){
+            
+        }
+        else{
+            e=libCancion.getSelectedIndex();
+            camino = cancion.mostrarCancion(e,6)+"";
+            System.out.println(camino);
+               
+        java.awt.EventQueue.invokeLater(() -> {
+        try {
+             Interface player;
+             player = new Interface(camino);
+             player.setVisible(true);
+         } catch (BasicPlayerException ex) {
+             Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+         }
+        
+        });
+                
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
         
     /**
      * @param args the command line arguments

@@ -17,17 +17,16 @@ import javazoom.jlgui.basicplayer.BasicPlayerException;
 public class Interface extends javax.swing.JFrame {
 Reproductormusica rep= null;
 
-JFileChooser fileChooser = new JFileChooser();
+//JFileChooser fileChooser = new JFileChooser();
 
-File file;
-    private String String;
 
 
     /**
      * Creates new form Interface
      */
-    public Interface() {
+    public Interface( String file) throws BasicPlayerException {
         rep= new Reproductormusica();
+        rep.control.open(new File(file+""));
         initComponents();
     }
     
@@ -42,10 +41,10 @@ File file;
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        PlayButton = new javax.swing.JButton();
-        PauseButton = new javax.swing.JButton();
-        StopButton = new javax.swing.JButton();
-        ContinueButton = new javax.swing.JButton();
+        btnPlay = new javax.swing.JButton();
+        btnPause = new javax.swing.JButton();
+        btnContinuar = new javax.swing.JButton();
+        btnStop = new javax.swing.JButton();
         VolumenControl = new javax.swing.JSlider();
         VolControl = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -53,38 +52,37 @@ File file;
         OpcionMenu = new javax.swing.JMenu();
         AgregarButton = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("ReproductorMusica");
-        setBackground(new java.awt.Color(1, 1, 1));
 
-        jPanel1.setBackground(new java.awt.Color(1, 1, 1));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setToolTipText("");
 
-        PlayButton.setIcon(new javax.swing.ImageIcon("/home/estebanmorales/Documents/Java/Tarea1/Play.png")); // NOI18N
-        PlayButton.addActionListener(new java.awt.event.ActionListener() {
+        btnPlay.setText("Play");
+        btnPlay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PlayButtonActionPerformed(evt);
+                btnPlayActionPerformed(evt);
             }
         });
 
-        PauseButton.setIcon(new javax.swing.ImageIcon("/home/estebanmorales/Documents/Java/Tarea1/Pause.png")); // NOI18N
-        PauseButton.addActionListener(new java.awt.event.ActionListener() {
+        btnPause.setText("II");
+        btnPause.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PauseButtonActionPerformed(evt);
+                btnPauseActionPerformed(evt);
             }
         });
 
-        StopButton.setIcon(new javax.swing.ImageIcon("/home/estebanmorales/Documents/Java/Tarea1/Play.png")); // NOI18N
-        StopButton.addActionListener(new java.awt.event.ActionListener() {
+        btnContinuar.setText("continuar");
+        btnContinuar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                StopButtonActionPerformed(evt);
+                btnContinuarActionPerformed(evt);
             }
         });
 
-        ContinueButton.setIcon(new javax.swing.ImageIcon("/home/estebanmorales/Documents/Java/Tarea1/Stop.png")); // NOI18N
-        ContinueButton.addActionListener(new java.awt.event.ActionListener() {
+        btnStop.setText("Stop");
+        btnStop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ContinueButtonActionPerformed(evt);
+                btnStopActionPerformed(evt);
             }
         });
 
@@ -105,12 +103,12 @@ File file;
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(88, 88, 88)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(PlayButton)
-                            .addComponent(ContinueButton))
+                            .addComponent(btnPlay)
+                            .addComponent(btnStop))
                         .addGap(328, 328, 328)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(StopButton)
-                            .addComponent(PauseButton)))
+                            .addComponent(btnContinuar)
+                            .addComponent(btnPause)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(231, 231, 231)
                         .addComponent(VolumenControl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -123,16 +121,16 @@ File file;
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PlayButton, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PauseButton))
+                    .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPause))
                 .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(VolumenControl, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(VolControl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ContinueButton)
-                    .addComponent(StopButton))
+                    .addComponent(btnStop)
+                    .addComponent(btnContinuar))
                 .addGap(162, 162, 162))
         );
 
@@ -142,7 +140,7 @@ File file;
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 282, Short.MAX_VALUE)
+            .addGap(0, 251, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,7 +182,7 @@ File file;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void PlayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayButtonActionPerformed
+    private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
         try {
             rep.control.play();//solo le decimos al control que de play (el archivo supuestamente ya fue abierto)
         } 
@@ -198,27 +196,27 @@ File file;
     //} catch (Exception ex) {
      //   Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
     //}
-    }//GEN-LAST:event_PlayButtonActionPerformed
+    }//GEN-LAST:event_btnPlayActionPerformed
 
-    private void PauseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PauseButtonActionPerformed
+    private void btnPauseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPauseActionPerformed
     try {
         // TODO add your handling code here:
         rep.control.pause();
     } catch (BasicPlayerException ex) {
         Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
     }
-    }//GEN-LAST:event_PauseButtonActionPerformed
+    }//GEN-LAST:event_btnPauseActionPerformed
 
-    private void StopButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StopButtonActionPerformed
+    private void btnContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuarActionPerformed
     try {
         // TODO add your handling code here:
         rep.control.resume();
     } catch (BasicPlayerException ex) {
         Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
     }
-    }//GEN-LAST:event_StopButtonActionPerformed
+    }//GEN-LAST:event_btnContinuarActionPerformed
 
-    private void ContinueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinueButtonActionPerformed
+    private void btnStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStopActionPerformed
     try {
         // TODO add your handling code here:
         rep.control.stop();
@@ -226,8 +224,8 @@ File file;
     catch (BasicPlayerException ex) {
         Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
     }
-    }//GEN-LAST:event_ContinueButtonActionPerformed
-
+    }//GEN-LAST:event_btnStopActionPerformed
+/*
     private void AgregarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarButtonActionPerformed
         // TODO add your handling code here:
         FileNameExtensionFilter filtro = new FileNameExtensionFilter("Archivo MP3", "mp3");
@@ -242,14 +240,15 @@ File file;
                 String file2;
                 file2 = file.toString();
                 metodoGuardarObj Informacion;
-                Informacion = new metodoGuardarObj(file2);              
+                Informacion = new metodoGuardarObj();      
+                 Informacion.agregarCancion(file2);
             } 
             catch (BasicPlayerException | IOException | UnsupportedTagException | InvalidDataException ex) {
                 Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
             }
         } 
     }//GEN-LAST:event_AgregarButtonActionPerformed
-      
+      */
     private void VolumenControlStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_VolumenControlStateChanged
         // TODO add your handling code here:
         try {
@@ -264,7 +263,7 @@ File file;
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+  public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -289,20 +288,24 @@ File file;
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new Interface().setVisible(true);
-        });
-    }
+       java.awt.EventQueue.invokeLater(() -> {
+            try {
+                new Interface("C:\\Users\\Jimmy\\Downloads\\Underground_Music_-Where_Well_Go(www.mp3vip.org).mp3").setVisible(true);
+            } catch (BasicPlayerException ex) {
+                Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
+            }
+   });
+   }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AgregarButton;
-    private javax.swing.JButton ContinueButton;
     private javax.swing.JMenu OpcionMenu;
-    private javax.swing.JButton PauseButton;
-    private javax.swing.JButton PlayButton;
-    private javax.swing.JButton StopButton;
     private javax.swing.JLabel VolControl;
     private javax.swing.JSlider VolumenControl;
+    private javax.swing.JButton btnContinuar;
+    private javax.swing.JButton btnPause;
+    private javax.swing.JButton btnPlay;
+    private javax.swing.JButton btnStop;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
