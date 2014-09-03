@@ -163,7 +163,11 @@
         <Property name="text" type="java.lang.String" value="Play"/>
       </Properties>
       <Events>
+<<<<<<< HEAD
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
+=======
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonPlayActionPerformed"/>
+>>>>>>> 7144e3540adff7b554c39603b8af16870a9c1264
       </Events>
     </Component>
   </SubComponents>

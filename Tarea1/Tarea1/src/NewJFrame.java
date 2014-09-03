@@ -7,6 +7,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
+<<<<<<< HEAD
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+=======
+>>>>>>> 7144e3540adff7b554c39603b8af16870a9c1264
 import javazoom.jlgui.basicplayer.BasicPlayerException;
 
 /*
@@ -27,6 +32,7 @@ public class NewJFrame extends javax.swing.JFrame {
      DefaultListModel lista = new DefaultListModel();
      JFileChooser fileChooser = new JFileChooser(".");
      mostrarInformacion informacion;
+     modificarInfo modificar;
     /**
      * Creates new form NewJFrame
      * @throws java.io.IOException
@@ -96,10 +102,17 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
+        jButton6.setText("Play");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+=======
         jButtonPlay.setText("Play");
         jButtonPlay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonPlayActionPerformed(evt);
+>>>>>>> 7144e3540adff7b554c39603b8af16870a9c1264
             }
         });
 
@@ -167,6 +180,31 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButtonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificarActionPerformed
         
+        if(libCancion.getSelectedIndex()<0){
+            
+        }
+        else{
+            int a = libCancion.getSelectedIndex();
+            modificar = new modificarInfo();
+            modificar.setVisible(true);
+            modificar.btn.getModel().setEnabled(true);
+            modificar.btn.addActionListener(new ActionListener(){
+                public void actionPerformed(ActionEvent evt){
+                     
+                    String artista = modificar.txtArtista.getText();
+                    String album = modificar.txtAlbum.getText();
+                    String genero =  modificar.txtGenero.getText();
+                    cancion.modificarCancion(a, artista, album, genero);
+                    modificar.lblCorrecto.setText("Se ha modificado");
+          }
+                
+      
+            
+        
+            });
+           // modificar.btnSubir.getModel().setEnabled(true);
+            
+                    }
 // TODO add your handling code here:
     }//GEN-LAST:event_jButtonModificarActionPerformed
 
@@ -230,9 +268,34 @@ public class NewJFrame extends javax.swing.JFrame {
         i--;
     }//GEN-LAST:event_btnEliminarActionPerformed
 
+<<<<<<< HEAD
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        if (libCancion.getSelectedIndex()<0){
+            
+        }
+        else{
+            e=libCancion.getSelectedIndex();
+            camino = cancion.mostrarCancion(e,6)+"";
+            System.out.println(camino);
+               
+        java.awt.EventQueue.invokeLater(() -> {
+        try {
+             Interface player;
+             player = new Interface(camino);
+             player.setVisible(true);
+         } catch (BasicPlayerException ex) {
+             Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+         }
+        
+        });
+                
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+=======
     private void jButtonPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPlayActionPerformed
 
     }//GEN-LAST:event_jButtonPlayActionPerformed
+>>>>>>> 7144e3540adff7b554c39603b8af16870a9c1264
         
     /**
      * @param args the command line arguments
