@@ -1,19 +1,3 @@
-
-import com.mpatric.mp3agic.InvalidDataException;
-import com.mpatric.mp3agic.UnsupportedTagException;
-import java.io.File;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.DefaultListModel;
-import javax.swing.JFileChooser;
-<<<<<<< HEAD
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-=======
->>>>>>> 7144e3540adff7b554c39603b8af16870a9c1264
-import javazoom.jlgui.basicplayer.BasicPlayerException;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -24,7 +8,21 @@ import javazoom.jlgui.basicplayer.BasicPlayerException;
  *
  * @author Jimmy
  */
-public class NewJFrame extends javax.swing.JFrame {
+import com.mpatric.mp3agic.InvalidDataException;
+import com.mpatric.mp3agic.UnsupportedTagException;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
+import javax.swing.JFileChooser;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javazoom.jlgui.basicplayer.BasicPlayerException;
+
+public class biblioteca extends javax.swing.JFrame {
      metodoGuardarObj cancion;
      String camino;
      int i;
@@ -34,15 +32,11 @@ public class NewJFrame extends javax.swing.JFrame {
      mostrarInformacion informacion;
      modificarInfo modificar;
     /**
-     * Creates new form NewJFrame
-     * @throws java.io.IOException
-     * @throws com.mpatric.mp3agic.UnsupportedTagException
-     * @throws com.mpatric.mp3agic.InvalidDataException
+     * Creates new form biblioteca
      */
-    public NewJFrame() throws IOException, UnsupportedTagException, InvalidDataException {
+    public biblioteca() throws IOException, UnsupportedTagException, InvalidDataException {
         initComponents();
         cancion = new metodoGuardarObj();
-        
     }
 
     /**
@@ -58,17 +52,17 @@ public class NewJFrame extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         libCancion = new javax.swing.JList();
         btnAgregar = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
         btnMostrar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnPlay = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
-        jButtonBuscar = new javax.swing.JButton();
-        jButtonModificar = new javax.swing.JButton();
-        jButtonPlay = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Serif", 0, 18)); // NOI18N
-        jLabel1.setText("Bibliteca");
+        jLabel1.setFont(new java.awt.Font("Hobo Std", 0, 18)); // NOI18N
+        jLabel1.setText("Biblioteca");
 
         jScrollPane1.setViewportView(libCancion);
 
@@ -79,10 +73,10 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        btnEliminar.setText("Eliminar");
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+        btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
+                btnModificarActionPerformed(evt);
             }
         });
 
@@ -93,94 +87,79 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        jButtonBuscar.setText("Buscar");
-
-        jButtonModificar.setText("Modificar");
-        jButtonModificar.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonModificarActionPerformed(evt);
+                btnEliminarActionPerformed(evt);
             }
         });
 
-<<<<<<< HEAD
-        jButton6.setText("Play");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnPlay.setText("Play");
+        btnPlay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-=======
-        jButtonPlay.setText("Play");
-        jButtonPlay.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonPlayActionPerformed(evt);
->>>>>>> 7144e3540adff7b554c39603b8af16870a9c1264
+                btnPlayActionPerformed(evt);
             }
         });
+
+        jButton1.setText("jButton1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(64, 64, 64)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(jButtonModificar)
-                        .addGap(18, 18, 18)
+                        .addComponent(btnModificar)
+                        .addGap(50, 50, 50)
                         .addComponent(btnEliminar)
-                        .addGap(104, 104, 104)
-                        .addComponent(btnMostrar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 21, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnMostrar)
+                        .addGap(70, 70, 70))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(btnAgregar)
-                                .addGap(116, 116, 116)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(209, 209, 209)
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButtonBuscar)))))
-                .addGap(91, 91, 91))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(276, 276, 276)
-                .addComponent(jButtonPlay)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton1)))
+                        .addGap(40, 40, 40))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(316, 316, 316))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnAgregar)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonBuscar)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAgregar)
+                    .addComponent(jButton1)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(2, 2, 2)
-                .addComponent(jButtonPlay)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnPlay, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnModificar)
                     .addComponent(btnEliminar)
-                    .addComponent(btnMostrar)
-                    .addComponent(jButtonModificar))
-                .addContainerGap(102, Short.MAX_VALUE))
+                    .addComponent(btnMostrar))
+                .addGap(37, 37, 37))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificarActionPerformed
-        
-        if(libCancion.getSelectedIndex()<0){
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+            if(libCancion.getSelectedIndex()<0){
             
         }
         else{
@@ -202,14 +181,10 @@ public class NewJFrame extends javax.swing.JFrame {
             
         
             });
-           // modificar.btnSubir.getModel().setEnabled(true);
-            
-                    }
-// TODO add your handling code here:
-    }//GEN-LAST:event_jButtonModificarActionPerformed
+            }
+    }//GEN-LAST:event_btnModificarActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-      
         camino=null;
        
         int status = fileChooser.showOpenDialog (null);
@@ -226,18 +201,15 @@ public class NewJFrame extends javax.swing.JFrame {
          try {
              cancion.agregarCancion(camino);
          } catch (IOException ex) {
-             Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+             Logger.getLogger(biblioteca.class.getName()).log(Level.SEVERE, null, ex);
          } catch (UnsupportedTagException ex) {
-             Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+             Logger.getLogger(biblioteca.class.getName()).log(Level.SEVERE, null, ex);
          } catch (InvalidDataException ex) {
-             Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+             Logger.getLogger(biblioteca.class.getName()).log(Level.SEVERE, null, ex);
          }
          lista.addElement(i+"-"+cancion.mostrarCancion(i,1));
          libCancion.setModel(lista);
          i++;
-        
-         
-         
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
@@ -268,8 +240,7 @@ public class NewJFrame extends javax.swing.JFrame {
         i--;
     }//GEN-LAST:event_btnEliminarActionPerformed
 
-<<<<<<< HEAD
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
         if (libCancion.getSelectedIndex()<0){
             
         }
@@ -280,23 +251,18 @@ public class NewJFrame extends javax.swing.JFrame {
                
         java.awt.EventQueue.invokeLater(() -> {
         try {
-             Interface player;
-             player = new Interface(camino);
+             reproductorMp3 player;
+             player = new reproductorMp3(camino);
              player.setVisible(true);
          } catch (BasicPlayerException ex) {
-             Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+             Logger.getLogger(biblioteca.class.getName()).log(Level.SEVERE, null, ex);
          }
         
         });
                 
         }
-    }//GEN-LAST:event_jButton6ActionPerformed
-=======
-    private void jButtonPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPlayActionPerformed
+    }//GEN-LAST:event_btnPlayActionPerformed
 
-    }//GEN-LAST:event_jButtonPlayActionPerformed
->>>>>>> 7144e3540adff7b554c39603b8af16870a9c1264
-        
     /**
      * @param args the command line arguments
      */
@@ -314,13 +280,13 @@ public class NewJFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(biblioteca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(biblioteca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(biblioteca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(biblioteca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -328,28 +294,28 @@ public class NewJFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new NewJFrame().setVisible(true);
+                    new biblioteca().setVisible(true);
                 } catch (IOException ex) {
-                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(biblioteca.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (UnsupportedTagException ex) {
-                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(biblioteca.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (InvalidDataException ex) {
-                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(biblioteca.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgregar;
-    private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton btnMostrar;
-    private javax.swing.JButton jButtonBuscar;
-    private javax.swing.JButton jButtonModificar;
-    private javax.swing.JButton jButtonPlay;
+    public static javax.swing.JButton btnAgregar;
+    public static javax.swing.JButton btnEliminar;
+    public static javax.swing.JButton btnModificar;
+    public static javax.swing.JButton btnMostrar;
+    public static javax.swing.JButton btnPlay;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JList libCancion;
+    public static javax.swing.JList libCancion;
     // End of variables declaration//GEN-END:variables
 }
