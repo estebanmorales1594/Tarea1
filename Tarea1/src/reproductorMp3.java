@@ -1,10 +1,9 @@
-<<<<<<< HEAD:Tarea1/Tarea1/src/reproductorMp3.java
+
 /*
  *Reproductor de musica.
  */
 
-=======
->>>>>>> origin/master:Tarea1/src/reproductorMp3.java
+
 
 import java.io.File;
 import java.io.IOException;
@@ -95,11 +94,9 @@ Reproductormusica rep= null;
                 .addComponent(volumeControl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-<<<<<<< HEAD:Tarea1/Tarea1/src/reproductorMp3.java
+
                 .addContainerGap(288, Short.MAX_VALUE))
-=======
-                .addContainerGap(373, Short.MAX_VALUE))
->>>>>>> origin/master:Tarea1/src/reproductorMp3.java
+
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,17 +105,12 @@ Reproductormusica rep= null;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnPlay)
                     .addComponent(btnPause))
-<<<<<<< HEAD:Tarea1/Tarea1/src/reproductorMp3.java
+
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(volumeControl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
-=======
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(volumeControl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
->>>>>>> origin/master:Tarea1/src/reproductorMp3.java
+
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnStop)
@@ -188,11 +180,9 @@ Reproductormusica rep= null;
         Logger.getLogger(reproductorMp3.class.getName()).log(Level.SEVERE, null, ex);
     }
         
-<<<<<<< HEAD:Tarea1/Tarea1/src/reproductorMp3.java
+
     
-=======
-    jLabel1.setText(volumeControl.getValue()+"%");         // TODO add your handling code here:
->>>>>>> origin/master:Tarea1/src/reproductorMp3.java
+
     }//GEN-LAST:event_volumeControlStateChanged
 
     /**

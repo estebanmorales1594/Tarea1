@@ -1,10 +1,9 @@
-<<<<<<< HEAD:Tarea1/Tarea1/src/biblioteca.java
+
 /**
  * Frame de la biblioteca, se encarga de administrar todas las cacniones.
  * Es el frame principal.
  */
-=======
->>>>>>> origin/master:Tarea1/src/biblioteca.java
+
 import com.mpatric.mp3agic.InvalidDataException;
 import com.mpatric.mp3agic.UnsupportedTagException;
 import java.awt.event.ActionEvent;
@@ -110,7 +109,7 @@ public class biblioteca extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD:Tarea1/Tarea1/src/biblioteca.java
+
         btnBuscar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Buscar por:", "Cancion", "Artista", "Genero", "Album" }));
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,9 +123,7 @@ public class biblioteca extends javax.swing.JFrame {
                 buscarActionPerformed(evt);
             }
         });
-=======
-        jButton1.setText("Buscar");
->>>>>>> origin/master:Tarea1/src/biblioteca.java
+
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -145,7 +142,7 @@ public class biblioteca extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-<<<<<<< HEAD:Tarea1/Tarea1/src/biblioteca.java
+
                         .addGap(331, 331, 331)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
@@ -163,30 +160,7 @@ public class biblioteca extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnMostrar)
                 .addGap(78, 78, 78))
-=======
-                        .addComponent(btnModificar)
-                        .addGap(50, 50, 50)
-                        .addComponent(btnEliminar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnMostrar)
-                        .addGap(70, 70, 70))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane1)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(btnAgregar)
-                                .addGap(209, 209, 209)
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton1)))
-                        .addGap(40, 40, 40))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(316, 316, 316))
->>>>>>> origin/master:Tarea1/src/biblioteca.java
+
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -314,7 +288,7 @@ public class biblioteca extends javax.swing.JFrame {
              mostrarInformacion.jLabel3.setText(test[1]);
              mostrarInformacion.jLabel5.setText(test[2]);
              mostrarInformacion.jLabel7.setText(test[3]);
-             mostrarInformacion.jLabel9.setText(test[4]);
+             mostrarInformacion.jLabel9.setText(test[4]+"secs");
             // mostrarInformacion.lblImg.setIcon(new ImageIcon(test[6]));
              
              
