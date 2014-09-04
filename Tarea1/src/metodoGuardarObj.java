@@ -186,43 +186,13 @@ public class metodoGuardarObj {
                 listaCanciones.get(i).setGenero(Genero);
               
                 
-            }
-        
+            
+        }
 
     /**
      * Por medio de este metodo el usuario, puede modificar la
      * informacion de una cancion
      *
-     */
-
-    /**
-     * Por medio de este metodo el usuario, puede modificar la
- informacion de una cancion
-     * @param cancion
-     */
-
-    /**
-     * Por medio de este metodo el usuario, puede modificar la
- informacion de una cancion
-     * @param cancion
-     * @param Artista
-     */
-
-    /**
-     * Por medio de este metodo el usuario, puede modificar la
- informacion de una cancion
-     * @param cancion
-     * @param Artista
-     * @param Album
-     */
-
-    /**
-     * Por medio de este metodo el usuario, puede modificar la
- informacion de una cancion
-     * @param cancion
-     * @param Artista
-     * @param Album
-     * @param Genero
      */
     public void modificarCancion(String cancion,String Artista, String Album, String Genero){
         for (int i = 0; i < listaCanciones.size();i++){

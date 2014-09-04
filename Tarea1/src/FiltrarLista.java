@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 7144e3540adff7b554c39603b8af16870a9c1264
 import java.awt.BorderLayout;
 import java.util.ArrayList;
 import javax.swing.AbstractListModel;
