@@ -40,7 +40,7 @@ public class modificarInfo extends javax.swing.JFrame {
         lblGenero = new javax.swing.JLabel();
         txtGenero = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        btnSubir = new javax.swing.JButton();
+        subir = new javax.swing.JButton();
         btn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         lblCorrect = new javax.swing.JLabel();
@@ -68,7 +68,7 @@ public class modificarInfo extends javax.swing.JFrame {
 
         jLabel6.setText("Subir Imagen de Album");
 
-        btnSubir.setText("...");
+        subir.setText("...");
 
         btn.setText("Modificar");
         btn.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +87,7 @@ public class modificarInfo extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnSubir))
+                        .addComponent(subir))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createSequentialGroup()
@@ -138,7 +138,7 @@ public class modificarInfo extends javax.swing.JFrame {
                 .addGap(77, 77, 77)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(btnSubir))
+                    .addComponent(subir))
                 .addGap(13, 13, 13)
                 .addComponent(lblCorrect)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -206,7 +206,6 @@ public class modificarInfo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton btn;
-    private javax.swing.JButton btnSubir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -218,6 +217,7 @@ public class modificarInfo extends javax.swing.JFrame {
     private javax.swing.JLabel lblCorrect;
     public static javax.swing.JLabel lblCorrecto;
     private javax.swing.JLabel lblGenero;
+    public static javax.swing.JButton subir;
     public static javax.swing.JTextField txtAlbum;
     public static javax.swing.JTextField txtArtista;
     public static javax.swing.JTextField txtGenero;

@@ -18,7 +18,8 @@ import javax.swing.JFileChooser;
 public class metodoGuardarObj {
     
      ArrayList<guardarInformacion> listaCanciones = new ArrayList();
-     ArrayList<String> listaBusqueda= new ArrayList();
+     
+     String[] listaInformacion;
      
     
      guardarInformacion cancion; 
@@ -60,26 +61,17 @@ public class metodoGuardarObj {
      * verificar dicha informacion por medio del este metodo,
      * solo ocupa tener los indices en los que se dentro de la lista
      */  
-    public String mostrarCancion(int x,int y){     
-        if (y ==1){
-             return listaCanciones.get(x).getCancion();
-        }
-        if (y==2){
-            return listaCanciones.get(x).getArtista();
-        }
-        if (y == 3){
-           return listaCanciones.get(x).getAlbum();
-        }
-        if (y==4){
-             return listaCanciones.get(x).getGenero();
-        }
-        if(y==5){
-            return listaCanciones.get(x).getTiempo();
-        }
-        if (y==6){
-            return listaCanciones.get(x).getCamino();
-        }
-        return  "";
+    public String[] mostrarCancion(int x){     
+            String[] listaInformacion ={
+            listaCanciones.get(x).getCancion(),
+            listaCanciones.get(x).getArtista(),
+            listaCanciones.get(x).getAlbum(),
+            listaCanciones.get(x).getGenero(),
+            listaCanciones.get(x).getTiempo(),
+            listaCanciones.get(x).getCamino(),
+            listaCanciones.get(x).getArte()};
+     
+        return  listaInformacion;
     }
     
     /**
@@ -87,22 +79,20 @@ public class metodoGuardarObj {
      * con solo ingresar el nombre del artista
      *
      */
-    public  Object buscarArtista(String elemento){ 
-        
+    public  Object[] buscarArtista(String elemento){ 
+        int x = 0;
+        ArrayList<String> listaBusqueda= new ArrayList();
         for (int i=0; i< listaCanciones.size();i++){
             
             if (listaCanciones.get(x).getArtista().equals(elemento)){
                
                listaBusqueda.add(listaCanciones.get(x).getCancion());
-               listaBusqueda.add(listaCanciones.get(x).getArtista());
-               listaBusqueda.add(listaCanciones.get(x).getAlbum());
-               listaBusqueda.add(listaCanciones.get(x).getGenero());
-               listaBusqueda.add(listaCanciones.get(x).getTiempo());
+          
             }
             x++;       
         } 
         System.out.println(listaBusqueda);
-        return (listaBusqueda); 
+        return (listaBusqueda.toArray(new String[0])); 
         
     }
     
@@ -111,23 +101,21 @@ public class metodoGuardarObj {
      * con solo ingresar el nombre del Album
      *
      */
-    public  Object buscarAlbum(String elemento){
-        
+    public  Object[] buscarAlbum(String elemento){
+        int x = 0;
+        ArrayList<String> listaBusqueda= new ArrayList();
         for (int i=0; i< listaCanciones.size();i++){
             int y = listaCanciones.size()-1;
             if (listaCanciones.get(x).getAlbum().equals(elemento)){
                
                listaBusqueda.add(listaCanciones.get(x).getCancion());
-               listaBusqueda.add(listaCanciones.get(x).getArtista());
-               listaBusqueda.add(listaCanciones.get(x).getAlbum());
-               listaBusqueda.add(listaCanciones.get(x).getGenero());
-               listaBusqueda.add(listaCanciones.get(x).getTiempo());
+       //no
             }
             x++;    
             
         } 
         System.out.println(listaBusqueda);
-        return (listaBusqueda); 
+        return (listaBusqueda.toArray(new String[0])); 
         
     }
     /**
@@ -135,8 +123,9 @@ public class metodoGuardarObj {
      * con solo ingresar el genero de una cancion
      *
      */
-     public  Object buscarGenero(String elemento){
-        
+     public  Object[] buscarGenero(String elemento){
+        ArrayList<String> listaBusqueda= new ArrayList();
+        int x=0;
         for (int i=0; i< listaCanciones.size();i++){
 
             if (listaCanciones.get(x).getGenero().equals(elemento)){
@@ -147,7 +136,7 @@ public class metodoGuardarObj {
             x++;       
         } 
         System.out.println(listaBusqueda);
-        return (listaBusqueda); 
+        return (listaBusqueda.toArray(new String[0])); 
         
     }
      
@@ -156,23 +145,20 @@ public class metodoGuardarObj {
      * con solo ingresar el nombre de la cancion
      *
      */
-    public Object buscarCancion(String elemento){
-        
-        
+    public Object[] buscarCancion(String elemento){
+        int x=0;
+        ArrayList<String> listaBusqueda= new ArrayList();
         for (int i=0; i< listaCanciones.size();i++){
        
-            if (listaCanciones.get(i).getCancion().equals(elemento)){
+            if (listaCanciones.get(x).getCancion().equals(elemento)){
                
                listaBusqueda.add(listaCanciones.get(x).getCancion());
-               listaBusqueda.add(listaCanciones.get(x).getArtista());
-               listaBusqueda.add(listaCanciones.get(x).getAlbum());
-               listaBusqueda.add(listaCanciones.get(x).getGenero());
-               listaBusqueda.add(listaCanciones.get(x).getTiempo());
+          
             }
             x++;       
         } 
         System.out.println(listaBusqueda);
-        return (listaBusqueda); 
+        return (listaBusqueda.toArray(new String[0])); 
 
     }
 
@@ -188,22 +174,16 @@ public class metodoGuardarObj {
                 
             
         }
+    public void subirImagen(int i,String imagen){
+        listaCanciones.get(i).setArt(imagen);
+    }
 
     /**
      * Por medio de este metodo el usuario, puede modificar la
      * informacion de una cancion
      *
      */
-    public void modificarCancion(String cancion,String Artista, String Album, String Genero){
-        for (int i = 0; i < listaCanciones.size();i++){
-            if(cancion.equals(listaCanciones.get(i).getCancion())){
-                listaCanciones.get(i).setAlbum(Album);
-                listaCanciones.get(i).setArtista(Artista);
-                listaCanciones.get(i).setGenero(Genero);   
-            }
-        }
 
-    } 
     
     /**
      * Por medio de este metodo se puede eliminar una cancion,
@@ -214,40 +194,12 @@ public class metodoGuardarObj {
     public void eliminarCancion(int x){
                 listaCanciones.remove(x);
             }
-        
-        
-        
-    
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  //Prueba de los metodos.
-    // Aqui comienza el main.///////////////////////////////////////////////////////////////////////////////////////
-    //No es parte del codig.//
-
-    
-    
-
-   /* public static void main (String[] args) throws IOException, UnsupportedTagException, InvalidDataException{
-
-        JFileChooser fileChooser = new JFileChooser(".");
-        int status = fileChooser.showOpenDialog (null);
-        if (status == JFileChooser.APPROVE_OPTION){
-            File selectedFile = fileChooser.getSelectedFile();
-            camino = selectedFile.getAbsolutePath();
-        }
-        else{ 
-            if (status == JFileChooser.CANCEL_OPTION){
-                System.out.println("CANCELAR");
-            }
-       
-        }
-        agregarCancion(camino);
-        System.out.println(listaCanciones.get(0).getCancion());
-        System.out.println(listaCanciones.get(0).getArtista());
-        mostrarCancion("With You/With Me");
-        buscarCancion("With You/With Me");
-        
-    }*/
+    public int getSize(){
+        return listaCanciones.size();
+    }
 }
+        
+
        
         
 

@@ -161,6 +161,6 @@ public class mostrarInformacion extends javax.swing.JFrame {
     private javax.swing.JOptionPane jOptionPane1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JLabel lblImg;
+    public static javax.swing.JLabel lblImg;
     // End of variables declaration//GEN-END:variables
 }
