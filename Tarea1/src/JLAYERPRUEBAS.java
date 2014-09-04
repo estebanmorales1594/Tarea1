@@ -1,7 +1,6 @@
 import javazoom.jl.player.Player;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import javazoom.jl.decoder.JavaLayerException;
 
 /**
  * Clase para reproducir musica, solamente reproduce
@@ -18,7 +17,7 @@ public class JLAYERPRUEBAS {
             
             playMp3.play();
         }
-        catch(FileNotFoundException | JavaLayerException e)
+        catch(FileNotFoundException e)
         {
            System.out.println(e);
         }
