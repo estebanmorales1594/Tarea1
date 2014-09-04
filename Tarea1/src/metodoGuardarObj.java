@@ -4,6 +4,7 @@ import com.mpatric.mp3agic.Mp3File;
 import com.mpatric.mp3agic.UnsupportedTagException;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import javax.swing.JFileChooser;
 
@@ -49,7 +50,7 @@ public class metodoGuardarObj {
         String Cancion = id3v1Tag.getTitle()+"";
         String Genero = id3v1Tag.getGenreDescription()+"";
         long Duracion = mp3file.getLengthInSeconds();
-        String Arte = "";
+        String Arte = System.getProperty("user.dir") + "/images.jpg"; 
         String path = camino;
         
         cancion = new guardarInformacion( Autor , Album ,Cancion,Genero,Duracion+"",Arte,path+"");
