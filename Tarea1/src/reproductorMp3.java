@@ -32,6 +32,7 @@ Reproductormusica rep= null;
         btnStop = new javax.swing.JButton();
         btnContinue = new javax.swing.JButton();
         volumeControl = new javax.swing.JSlider();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -87,7 +88,9 @@ Reproductormusica rep= null;
             .addGroup(layout.createSequentialGroup()
                 .addGap(287, 287, 287)
                 .addComponent(volumeControl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(377, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addContainerGap(373, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,7 +100,9 @@ Reproductormusica rep= null;
                     .addComponent(btnPlay)
                     .addComponent(btnPause))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
-                .addComponent(volumeControl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(volumeControl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnStop)
@@ -154,7 +159,7 @@ Reproductormusica rep= null;
         Logger.getLogger(reproductorMp3.class.getName()).log(Level.SEVERE, null, ex);
     }
         
-        //VolControl.setText(volumeControl.getValue()+"%");         // TODO add your handling code here:
+    jLabel1.setText(volumeControl.getValue()+"%");         // TODO add your handling code here:
     }//GEN-LAST:event_volumeControlStateChanged
 
     /**
@@ -201,6 +206,7 @@ Reproductormusica rep= null;
     private javax.swing.JButton btnPause;
     private javax.swing.JButton btnPlay;
     private javax.swing.JButton btnStop;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JSlider volumeControl;
     // End of variables declaration//GEN-END:variables
 }
